@@ -3,6 +3,14 @@ public class OfflineDoctor implements Doctor {
         System.out.println("Hey I am Online Curing Patient");
     }
 
+
+
+
+
+
+
+
+
     @Override
     public void getPatientList() {
        //
