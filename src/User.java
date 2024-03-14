@@ -1,5 +1,7 @@
 public class User {
     String name;
+
+    String userAddress;
     private String email;
     private String password;
 
