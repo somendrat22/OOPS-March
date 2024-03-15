@@ -1,69 +1,44 @@
+import java.sql.SQLException;
 import java.util.ArrayList;
 
+
+
 public class Main {
-    static {
-        System.out.println("Hey");
-    }
+    public static void main(String[] args) throws Exception{
 
-    {
-        System.out.println("Hey Instance");
-    }
+        int num1 = 7;
+        int num2 = 6;
 
-    Doctor doc = new Doctor() {
-        @Override
-        public void getPatientList() {
+
+        // throw : When we want to throw exception by ourself. So we use throw keyword
+
+        // throws : When we have to declare that this particular method can throw exception.
+
+        // For unchecked exception don't requires to use throws keyword.
+        // If you are throwing checked exception at that time you need to explicity declare that this
+        // method can throw exception
+        // In the case when you throwing checked exception and you don't want to handle that
+        // checked exception in that method then you need to use throws keyword in that method declaration
+        // and whatever function is going to call that method it need to handle that exception
+
+        try{
+            hey();
+        }catch (Exception e){
 
         }
+         // If main method also don't want to handle excepetion by itself it is going to throw
+        // to JVM
 
-        @Override
-        public void giveMedicines() {
-
-        }
-    }
-
-
-    public Doctor getDoctor(String pId){
-        return patiient.getDoctor(); // new OfflineDoctor(), new Online
-    }
-
-    // It is able to test only mercedes car
-    public static void carTesting(Car car){
-        // You will be able to test mercedes as well as swift
-        // abstract classes we use when we are not interested in implementation we are just interested in functionality
-        // you can't create object of abstract classes
-        car.useSteringWheel();
-    }
-
-    public void accessUser(User user){
-        String email = user.getEmail();
-    }
-    public static void main(String[] args) {
-       // Main m = new Main();
-       // See with the eyes of reference
-       // For methods it will be always bottom to up
-       // Refernce will check it owns variable
-        OfflineDoctor doc = getDoctor(); // offlineDoctor , OnlineDpoctor
-        doc.giveMedicines();
-        carTesting(new Mercedes());
-        carTesting(new Swift());
-        User user = new User("Somendra", "tiwarisomendra22@gmail.com", "123456");
+        fun1();
 
     }
 
-    // compile time polymorphism, method overlaoding
-    public void fun(){
-        Bank bank = new Bank();
-        bank.createAccount("some");
-        bank.createAccount("djfoemf", "dbeidnein");
+    public static void fun1() {
+        hey();
     }
 
-    public void fun(int a, int b){
-        Mercedes m = new Mercedes();
-        m.accelerate();
-    }
 
-    public void fun(int a, int b, int c){
-        System.out.println("Hey");
-        System.out.println("Hey");
-    }
+    public static void hey() throws CredentialsNotExist{ //
+        throw new CredentialsNotExist("Hey");
+    } //
 }
